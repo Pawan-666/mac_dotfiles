@@ -1,0 +1,21 @@
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin
+
+export EDITOR=lvim
+# bindkey -s '^t' '^ulf\n'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bindkey -e
+#. "$HOME/.cargo/env"
+
+# PS1='\[\e[36m\][\u@\h]\[\e[33m\] \w\[\e[36m\]\n\$\[\e[0m\] '
+# bind '"\C-t":"nnn\n"'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias rtv="rtv -s linux --no-flash --ascii"
+alias python="python3"
+alias vi="lvim"
+alias shutdown="sudo shutdown -r now"
+alias pawan="ssh pawan@192.168.1.66"
+alias wifi="ifconfig | grep -w inet | sed -n '2p'"
+
+#export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+#source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

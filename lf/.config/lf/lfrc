@@ -1,0 +1,247 @@
+set hidden
+set icons
+set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
+
+cmd open ${{
+    case $(file --mime-type $f -b) in
+          text/*) case $f in
+            *sc) sc-im $fx;;
+            *txt) lvim $fx;;
+            *) $EDITOR $fx;;
+          esac ;;
+    video/*) open -a mpv $f & ;;
+    application/pdf) zathura $f & ;;
+    application/x-sc) sc-im $fx ;;
+    *) open $f & ;;
+  esac
+}}
+
+cmd delete ${{
+        clear; tput cup $(($(tput lines)/3)); tput bold
+        set -f
+        printf "%s\n\t" "$fx"
+        printf "delete?[y/N]"
+        read ans
+        [ $ans = "y" ] && rm -rf -- $fx
+}}
+
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+
+  lf -remote 'send reload'
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  #sudo $EDITOR $ans
+  touch $ans
+  lvim $ans
+}}
+
+cmd mkscript ${{
+  printf "File Name: "
+  read ans
+  touch $ans
+  chmod 770 $ans
+  #sudo $EDITOR $ans
+  lvim $ans
+}}
+
+cmd exscript ${{
+        clear; tput cup $(($(tput lines)/3)); tput bold
+        set -f
+        printf "%s\n\t" "$fx"
+        printf "Run the script?[y/N]"
+        read ans
+        [ $ans = "y" ] && bash $fx
+}}
+
+
+cmd sudomkfile ${{
+  printf "File Name: "
+  read ans
+  sudo $EDITOR $ans
+}}
+
+cmd mkd ${{
+  printf "Dir Name:"
+  read ans
+  mkdir -p $ans
+}}
+
+cmd sudomkdir ${{
+  printf "Dir Name:"
+  read ans
+  sudo mkdir -p $ans
+}}
+
+
+
+
+# Trash cli bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    # if there's only one element left, set `files` to an empty string.
+    # this causes us to exit this `while` loop.
+    # else, we delete the first "element" of the string from files, and move onto the next.
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd clear_trash %trash-empty
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+
+cmd vscode ${{
+  code .
+  }}
+
+cmd dolphin ${{
+  open .
+  }}
+
+cmd edit ${{
+  lvim $f
+  }}
+
+cmd toggle_preview %{{
+    if [ "$lf_preview" = "true" ]; then
+        lf -remote "send $id :set preview false; set ratios 1:5"
+    else
+        lf -remote "send $id :set preview true; set ratios 1:2:3"
+    fi
+}}
+
+map tp toggle_preview
+# Bindings
+# Remove some defaults
+map m
+map a
+map o
+#map n
+#map N
+map M
+#map "'"
+#map '"'
+map d
+map c
+map e
+map E
+map f
+map b
+map t
+map R
+
+
+map <c-f> $lf -remote "send $id select \"$(fzf)\""
+map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf)"
+map gh
+map dd trash
+map D delete
+map tc clear_trash
+map tr restore_trash
+
+#map X extract
+map az zip
+map at tar
+map ag targz
+map ab targz
+map au unarchive
+
+#map C copyto
+#map M moveto
+map x cut
+map p paste
+map C clear
+map U unselect
+map y copy
+#map <c-n> push :mkdir<space>
+map md mkd
+map mf mkfile
+map ms mkscript
+map Md sudomkdir
+map Mf sudomkfile
+map ch chmod
+map <c-r> reload
+map . set hidden!
+map <enter> open
+map <c-j> open
+map e edit
+map E exscript
+map V vscode
+map F dolphin
+map
+#map x $$f
+#map X !$f
+#map O &mimeopen $f
+#map o $mimeopen --ask $f
+
+#map A rename # at the very end
+#map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extension
+#map a push A<a-b> # after extension
+map r rename
+map R bulkrename
+#map b $setbg $f
+
+map <c-e> down
+map <c-y> up
+
+
+map di dragon-individual
+#map dl dlfile
+
+#bookmarks
+map gd cd ~/Downloads
+map gp cd ~/Pictures
+map gs cd ~/scripts
+map gv cd ~/Videos
+map gt cd ~/test
+map ge cd /Users/pawanchhetri/WIKI2/wiki/ekbana
+map gw cd /Users/pawanchhetri/WIKI2/wiki
+map gl cd /Users/pawanchhetri/WIKI2/wiki/linux
+map gm cd /home/pawan/Music
+map g/ cd /
+map g~ cd ~
+map gh cd ~
+map gM cd ~/Storage
+map gT cd ~/.local/share/Trash/files/
+map gB cd ~/Downloads/Books
+map gb cd /Users/pawanchhetri/WIKI2/wiki/my_blog/my_blog/pawan/content/blog
+map gT cd ~/.tmux_files/
