@@ -256,7 +256,8 @@ precmd() {
 # bindkey -s '^t' '^nnnn\n'
 bindkey -s '^t' '^ulf\n'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 alias rtv="rtv -s linux --no-flash --ascii"
 alias python="python3"
 alias vi="lvim"
@@ -266,3 +267,7 @@ alias wifi="ifconfig | grep -w inet | sed -n '2p'"
 export EDITOR="lvim"
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin:/Users/pawanchhetri/test/mpv/build/mpv.app/Contents/MacOS
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export CHEAT_USE_FZF=true
