@@ -82,13 +82,14 @@ key_bindings:
 #  - { key: Key7, mods: Command, chars: "\x027" } #                ... 7
 #  - { key: Key8, mods: Command, chars: "\x028" } #                ... 8
 #  - { key: Key9, mods: Command, chars: "\x029" } #                ... 9
-  - { key: A, mods: Command, chars: "\x0e" } # tmux prefix
+  - { key: A, mods: Command, chars: "\x07" } # tmux prefix
     #  - { key: Period, mods: Command, chars: ":ZenMode\n" } # toggle zen mode
   - { key: Period, mods: Command, chars: "\x1b\x2e" } # Esc + . mapped to Cmd+.
   - { key: D, mods: Command, chars: "\x1b\x64" } # Alt + d
   - { key: B, mods: Command, chars: "\x1b\x62" } # Alt + b
   - { key: T, mods: Command, chars: "\x1b\x74" } # Alt + t
   - { key: F, mods: Command, chars: "\x1b\x66" } # Alt + f
+  - { key: N, mods: Control, chars: "\x0e" } 
     #- { key: Period, mods: Command, chars: "\x1b\x2e" } # Esc + . mapped to Cmd+.
 #  - { key: A, mods: Control, chars: "\x1b" } # create a new tmux windowu
   - { key: Space,  mods: Control,    action: ToggleViMode }
