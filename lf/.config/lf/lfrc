@@ -1,4 +1,4 @@
-set hidden
+#set hidden
 set icons
 set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
 
@@ -229,6 +229,7 @@ map di dragon-individual
 
 #bookmarks
 map gd cd ~/Downloads
+map gD cd ~/Desktop
 map gp cd ~/Pictures
 map gs cd ~/scripts
 map gv cd ~/Videos
@@ -241,7 +242,10 @@ map g/ cd /
 map g~ cd ~
 map gh cd ~
 map gM cd ~/Storage
-map gT cd ~/.local/share/Trash/files/
 map gB cd ~/Downloads/Books
 map gb cd /Users/pawanchhetri/WIKI2/wiki/my_blog/my_blog/pawan/content/blog
 map gT cd ~/.tmux_files/
+map gu cd /Users/pawanchhetri/WIKI2/wiki/uba
+map gn cd /Users/pawanchhetri/WIKI2/wiki/my_blog/my_blog/to_be_published/
+map gL cd /Users/pawanchhetri/learning
+

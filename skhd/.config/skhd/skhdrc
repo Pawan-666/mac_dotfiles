@@ -42,8 +42,13 @@ alt + shift - r : yabai -m space --rotate 270
 alt + shift - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle maximize a window
-alt - m : yabai -m window --toggle zoom-fullscreen
+cmd - m : yabai -m window --toggle zoom-fullscreen
 
 
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
+
+# Brave
+alt - b : open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+
+# skhd --stop-service

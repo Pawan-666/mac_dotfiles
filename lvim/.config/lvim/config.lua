@@ -42,7 +42,7 @@ vim.opt.syntax = 'enable'         -- enable syntax highlighting
 vim.opt.number = true             -- show line number
 vim.opt.showmatch = true          -- highlight matching parenthesis
 vim.opt.relativenumber = true     -- show relative distance between rows
-vim.opt.scrolloff = 10            -- keep 10 row buffer on screen edges
+vim.opt.scrolloff = 3            -- keep 10 row buffer on screen edges
 vim.opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
 --vim.opt.colorcolumn = '120'        -- line length marker at 80 columns
 --vim.opt.colorcolumn = true
@@ -59,8 +59,7 @@ lvim.keys.insert_mode["<C-f>"] = "<Right>"
 lvim.keys.insert_mode["<C-b>"] = "<Left>"
 
 lvim.keys.normal_mode["<Leader>S"] = ":setlocal spell! spelllang=en_us<CR>"
-lvim.keys.normal_mode["<Leader>C"] = ":set cuc!<CR>"
-lvim.keys.normal_mode["<Leader>n"] = ":set nu! rnu!<CR>"
+lvim.keys.normal_mode["<Leader>C"] = ":set cuc!<CR>"   -- set cursor on column
 lvim.keys.normal_mode["<Leader>n"] = ":set nu! rnu!<CR>"
 lvim.keys.normal_mode["<Leader>z"] = ":ZenMode<CR>"
 -- Markdown bindings
@@ -74,13 +73,13 @@ lvim.keys.insert_mode["'5"] = "##### <esc>a"
 lvim.keys.insert_mode["'B"] = "____<esc>hi"
 lvim.keys.insert_mode["'T"] = '+++<CR>title = "Blog_title"<CR>date = 2023-02-01<CR>+++<CR><CR>'
 lvim.keys.insert_mode["'I"] = "**<esc>i"
-lvim.keys.normal_mode["'p"] = ":PasteImg<CR>"
+lvim.keys.normal_mode["'p"] = ":PasteImg<CR>o"
+lvim.keys.insert_mode["'P"] = "<esc>:PasteImg<CR>o"
 lvim.keys.insert_mode["'M"] = "``<esc>i"
 lvim.keys.insert_mode["'R"] = "---<CR>"
 lvim.keys.insert_mode["'L"] = "[]()<esc>Ba"
 -- lvim.keys.insert_mode["'C"] = "```sh```<esc>2hi<CR><CR><esc>hi"
 lvim.keys.insert_mode["'C"] = "``````<esc>2hi<CR><CR><esc>hi"      -- bash
-lvim.keys.insert_mode["'P"] = "```python```<esc>2hi<CR><CR><esc>hi"      -- python
 lvim.keys.insert_mode["'b"] = "    "
 
 --lvim.keys.insert_mode["'r"] = "---<esc>Ojjj2ojji"
@@ -108,7 +107,7 @@ lvim.keys.normal_mode["<C-t>"] = ":NnnPicker %:p:h<CR>"
 --lvim.keys.normal_mode["<C-t>"] = ":Lf<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-^><CR>"
 --lvim.builtin.lualine.options.theme = "gruvbox"
---lvim.builtin.lualine.style = "none" -- or "none"
+lvim.builtin.lualine.style = "none" -- or "none"
 lvim.keys.normal_mode["<C-h>"] = false
 lvim.keys.normal_mode["<C-j>"] = false
 lvim.keys.normal_mode["<C-k>"] = false
