@@ -139,6 +139,10 @@ cmd edit ${{
   lvim $f
   }}
 
+# set preview
+# set previewer /Users/pawanchhetri/test/random/dotfiles/.config/lf/lf-previewer.sh
+
+
 cmd toggle_preview %{{
     if [ "$lf_preview" = "true" ]; then
         lf -remote "send $id :set preview false; set ratios 1:5"

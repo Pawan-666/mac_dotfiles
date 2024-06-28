@@ -6,6 +6,9 @@
 # ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
 # https://alacritty.org
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+
 
 live_config_reload: true
 
@@ -17,18 +20,20 @@ env:
 #   hide_when_typing: true
 
 window:
-  dynamic_padding: false
+  decorations: "none"
+  # dynamic_padding: false
   # opacity: 0
-  opacity: 0.9
   # opacity: 0.7
+  opacity: 0.90
   padding:
     x: 5
     y: 5
 
 font:
   normal:
-    family: "SFMono Nerd Font"
-    style: Medium
+    family: "JetBrainsMonoNL Nerd Font"
+    # family: "SFMono Nerd Font"
+    style: Regular
   italic:
     family: "SFMono Nerd Font"
     style: Medium Italic
@@ -45,17 +50,14 @@ font:
     #$xxd -ps
 
 key_bindings:
-  - { key: A, mods: Command, chars: "\x07" } # tmux prefix
-    #  - { key: Period, mods: Command, chars: ":ZenMode\n" } # toggle zen mode
+  # - { key: A, mods: Command, chars: "\x07" } # tmux prefix C-g
+  - { key: A, mods: Command, chars: "\x1b\x6d" } # tmux prefix alt-m
   - { key: Period, mods: Command, chars: "\x1b\x2e" } # Esc + . mapped to Cmd+.
   - { key: D, mods: Command, chars: "\x1b\x64" } # Alt + d
   - { key: B, mods: Command, chars: "\x1b\x62" } # Alt + b
   - { key: T, mods: Command, chars: "\x1b\x74" } # Alt + t
   - { key: F, mods: Command, chars: "\x1b\x66" } # Alt + f
   - { key: N, mods: Control, chars: "\x0e" } 
-    #- { key: Period, mods: Command, chars: "\x1b\x2e" } # Esc + . mapped to Cmd+.
+    # - { key: Period, mods: Command, chars: "\x1b\x2e" } # Esc + . mapped to Cmd+.
 #  - { key: A, mods: Control, chars: "\x1b" } # create a new tmux windowu
   - { key: Space,  mods: Control,    action: ToggleViMode }
-import:
-  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-

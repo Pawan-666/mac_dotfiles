@@ -29,10 +29,17 @@ lvim.builtin.lualine.active = false
 vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 vim.opt.laststatus = 0
 -- vim.opt.iskeyword:append("-") -- consider string-string as whole word
+
+-- vim.opt.tabstop= 4
+vim.opt.softtabstop= 4
+-- vim.opt.shiftwidth= 4
+-- vim.opt.expandtab= true
+vim.opt.smartindent= true
+
 vim.opt.expandtab = true      -- use spaces instead of tabs
-vim.opt.shiftwidth = 2        -- shift 4 spaces when tab
-vim.opt.tabstop = 2           -- 1 tab == 4 spaces
-vim.opt.smartindent = false    -- autoindent new lines
+vim.opt.shiftwidth = 4        -- shift 4 spaces when tab
+vim.opt.tabstop = 4           -- 1 tab == 4 spaces
+-- vim.opt.smartindent = false    -- autoindent new lines
 vim.opt.mouse = 'a'               -- enable mouse support
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.opt.swapfile = false          -- don't use swapfile
@@ -42,7 +49,7 @@ vim.opt.syntax = 'enable'         -- enable syntax highlighting
 vim.opt.number = true             -- show line number
 vim.opt.showmatch = true          -- highlight matching parenthesis
 vim.opt.relativenumber = true     -- show relative distance between rows
-vim.opt.scrolloff = 3            -- keep 10 row buffer on screen edges
+vim.opt.scrolloff = 8            -- keep 10 row buffer on screen edges
 vim.opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
 --vim.opt.colorcolumn = '120'        -- line length marker at 80 columns
 --vim.opt.colorcolumn = true
@@ -110,6 +117,8 @@ lvim.keys.normal_mode["<Leader><Leader>"] = "<C-^><CR>"
 lvim.builtin.lualine.style = "none" -- or "none"
 lvim.keys.normal_mode["<C-h>"] = false
 lvim.keys.normal_mode["<C-j>"] = false
+lvim.keys.insert_mode["jj"] = "<Esc>"
+lvim.keys.insert_mode["kk"] = "<Esc>"
 lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
 
@@ -255,15 +264,16 @@ local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
   -- for input mode
   i = {
-    ["<C-j>"] = actions.move_selection_next,
+    ["<C-j>"] = "<CR>",
+    -- ["<C-j>"] = actions.move_selection_next,
     ["<C-k>"] = actions.move_selection_previous,
     ["<C-n>"] = actions.cycle_history_next,
     ["<C-p>"] = actions.cycle_history_prev,
   },
   -- for normal mode
   n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
+    -- ["<C-j>"] = actions.move_selection_next,
+    -- ["<C-k>"] = actions.move_selection_previous,
   },
 }
 
@@ -393,6 +403,7 @@ lvim.plugins = {
     { 'glacambre/firenvim', build = function() vim.fn['firenvim#install'](0) end },
     {'ekickx/clipboard-image.nvim'},
     {"folke/zen-mode.nvim"},
+    {"murtaza-u/lunarline"},
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
@@ -408,3 +419,4 @@ lvim.plugins = {
 --   end,
 -- })
 -- Sample configuration is supplied
+
