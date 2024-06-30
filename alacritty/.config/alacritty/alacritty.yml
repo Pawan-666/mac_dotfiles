@@ -60,4 +60,5 @@ key_bindings:
   - { key: N, mods: Control, chars: "\x0e" } 
     # - { key: Period, mods: Command, chars: "\x1b\x2e" } # Esc + . mapped to Cmd+.
 #  - { key: A, mods: Control, chars: "\x1b" } # create a new tmux windowu
+  # - { key: Space,  mods: Control,    action: ToggleViMode }
   - { key: Space,  mods: Control,    action: ToggleViMode }
