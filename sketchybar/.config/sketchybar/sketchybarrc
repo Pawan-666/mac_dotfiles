@@ -1,9 +1,9 @@
 #!/bin/sh
 
 bar=(
-  # color=0xff24273a
   color=0xff000000
-  height=33
+  # color=0xff2e2f3a        # catpucin
+  height=35
   sticky=on
   padding_left=7
   padding_right=7
@@ -32,10 +32,18 @@ sketchybar \
 #   --subscribe app_name front_app_switched
 
 # sketchybar \
+#   --add item nepdate right \
+#   --set nepdate script='sketchybar --set $NAME label="$(nepcal date)"' \
+#              update_freq=300 \
+#   --subscribe nepdate system_woke
+
+# sketchybar \
 #   --add item time right \
 #   --set time script='sketchybar --set $NAME label="$(date "+%H:%M")"' \
 #              update_freq=30 \
 #   --subscribe time system_woke
+
+
 
 # sketchybar \
 #   --add item ip right \

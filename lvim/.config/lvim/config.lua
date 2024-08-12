@@ -31,14 +31,14 @@ vim.opt.laststatus = 0
 -- vim.opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- vim.opt.tabstop= 4
-vim.opt.softtabstop= 4
+vim.opt.softtabstop= 2
 -- vim.opt.shiftwidth= 4
 -- vim.opt.expandtab= true
 vim.opt.smartindent= true
 
 vim.opt.expandtab = true      -- use spaces instead of tabs
-vim.opt.shiftwidth = 4        -- shift 4 spaces when tab
-vim.opt.tabstop = 4           -- 1 tab == 4 spaces
+vim.opt.shiftwidth = 2        -- shift 4 spaces when tab
+vim.opt.tabstop = 2           -- 1 tab == 4 spaces
 -- vim.opt.smartindent = false    -- autoindent new lines
 vim.opt.mouse = 'a'               -- enable mouse support
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
@@ -95,6 +95,8 @@ lvim.keys.insert_mode["'b"] = "    "
 --lvim.keys.insert_mode["'c"] = "``````<esc>2hi<CR><esc>O"
 
 -- lvim.keys.normal_mode["T"] = ":Telescope buffers<CR>"
+-- ggVGp
+lvim.keys.normal_mode["<Leader>p"] = "ggVGp"
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"

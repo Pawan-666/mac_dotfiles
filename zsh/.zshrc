@@ -151,6 +151,12 @@ penv() {
 pyenv virtualenv 3.12.0 $(basename $(pwd)) && pyenv local $(basename $(pwd))
 }
 
+mkdircd ()
+{
+    mkdir -p -- "$1" &&
+       cd -P -- "$1"
+}
+
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
@@ -164,3 +170,4 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 eval "$(fzf --zsh)"
 bindkey -s '^t' '^uyy\n'
+eval "$(starship init zsh)"
