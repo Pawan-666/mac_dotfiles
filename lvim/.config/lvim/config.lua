@@ -96,6 +96,8 @@ lvim.keys.insert_mode["'b"] = "    "
 
 -- lvim.keys.normal_mode["T"] = ":Telescope buffers<CR>"
 -- ggVGp
+
+lvim.keys.normal_mode["<Leader>L"] = ":LspStop<CR>"
 lvim.keys.normal_mode["<Leader>p"] = "ggVGp"
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["k"] = "gk"

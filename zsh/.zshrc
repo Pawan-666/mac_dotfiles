@@ -72,54 +72,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias ls='ls --color'
-alias vim='lvim'
-alias c='clear'
-
-alias net=' #my ip
-            echo -e "ip addrress"
-            ifconfig | grep -w inet | sed -n '2p' | awk "{print $2}";
-
-            # Ping Google
-            echo "Pinging Google..."
-            ping -c 2 google.com;
-
-            # DNS lookup for Google
-            echo -e "\nDNS Lookup for Google:"
-            dig +short google.com;
-
-            # Retrieve headers from Google homepage
-            echo -e "\nHeaders from Google homepage:"
-            curl -I http://www.google.com 2>/dev/null | head -n 1;
-
-            # Check if Google is reachable using wget
-            echo -e "\nChecking Google reachability with wget..."
-            wget -q --spider www.google.com;
-            if [ $? -eq 0 ]; then
-                echo "OK"
-            else
-                echo "NOT OKAY"
-            fi
-
-            # Perform DNS lookup using nslookup
-            echo -e "\nDNS Lookup for Google using nslookup:"
-            nslookup google.com
-            '
-
-
-alias rm=trash
-alias rtv="rtv -s linux --no-flash --ascii"
-# alias python3="/usr/bin/python3"
-# alias python="/usr/bin/python3"
-alias go="/usr/local/go/bin/go"
-alias vi="lvim"
-# alias ls="exa"
-alias shutdown="sudo shutdown -r now"
-alias pawan="ssh pawan@192.168.1.68"
-alias wifi="ifconfig | grep -w inet | sed -n '2p'" 
 export EDITOR="lvim"
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin:/Users/pawanchhetri/test/mpv/build/mpv.app/Contents/MacOS:~/.cargo/env
+export PATH=/opt/homebrew/bin:/Users/pawanchhetri/.cargo/bin:usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin:/Users/pawanchhetri/test/mpv/build/mpv.app/Contents/MacOS:~/.cargo/env:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin
 # Shell integrations
 # eval "$(fzf --zsh)"
 # # eval "$(zoxide init --cmd cd zsh)"
@@ -131,6 +85,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+source ~/.zsh_alias
 
 source $ZSH/oh-my-zsh.sh
 
@@ -170,4 +125,8 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 eval "$(fzf --zsh)"
 bindkey -s '^t' '^uyy\n'
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
