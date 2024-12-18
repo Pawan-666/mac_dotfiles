@@ -1,3 +1,4 @@
+# https://alacritty.org/config-alacritty.html
 import = ["/Users/pawanchhetri/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
 live_config_reload = true
 
@@ -8,10 +9,12 @@ TERM = "alacritty"
 size = 18.0
 
 [window]
-decorations = "none"
+# decorations = "none"
+# decorations = "transparent"
+decorations = "buttonless"
 # opacity = 0.9
-# opacity = 0.8
-opacity = 0.7
+opacity = 0.8
+# opacity = 0.5
 
 [font.normal]
 # family = "Hack Nerd Font"
@@ -73,5 +76,5 @@ mods = "Control"
 
 
 [window.padding]
-x = 7
-y = 7
+x = 8
+y = 8

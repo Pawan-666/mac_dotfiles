@@ -73,7 +73,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 export EDITOR="lvim"
-export PATH=/opt/homebrew/bin:/Users/pawanchhetri/.cargo/bin:usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin:/Users/pawanchhetri/test/mpv/build/mpv.app/Contents/MacOS:~/.cargo/env:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin
+export PATH=/opt/homebrew/bin:/usr/local/go/bin/:/Users/pawanchhetri/.cargo/bin:usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin:/Users/pawanchhetri/test/mpv/build/mpv.app/Contents/MacOS:~/.cargo/env:
 # Shell integrations
 # eval "$(fzf --zsh)"
 # # eval "$(zoxide init --cmd cd zsh)"
@@ -103,7 +103,7 @@ function yy() {
 # }
 
 penv() {
-pyenv virtualenv 3.12.0 $(basename $(pwd)) && pyenv local $(basename $(pwd))
+pyenv virtualenv 3.13.0 $(basename $(pwd)) && pyenv local $(basename $(pwd))
 }
 
 mkdircd ()

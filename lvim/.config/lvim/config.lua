@@ -103,8 +103,8 @@ lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<C-n>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<C-p>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-j>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<C-k>"] = ":BufferLineCyclePrev<CR>"
 --lvim.keys.normal_mode["<Leader>r"] = ":LspRestart<CR>"
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.normal_mode["<Leader>s"] = ":w<CR>"
@@ -120,10 +120,10 @@ lvim.keys.normal_mode["<Leader><Leader>"] = "<C-^><CR>"
 --lvim.builtin.lualine.options.theme = "gruvbox"
 lvim.builtin.lualine.style = "none" -- or "none"
 lvim.keys.normal_mode["<C-h>"] = false
-lvim.keys.normal_mode["<C-j>"] = false
+-- lvim.keys.normal_mode["<C-j>"] = false
 lvim.keys.insert_mode["jj"] = "<Esc>"
 lvim.keys.insert_mode["kk"] = "<Esc>"
-lvim.keys.normal_mode["<C-k>"] = false
+-- lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
 
 -- Centers cursor when moving 1/2 page down
@@ -307,23 +307,23 @@ lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Project
 --  { key = "<C-x>", action = "split" },
 --}
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
-}
+-- lvim.builtin.treesitter.ensure_installed = {
+--   "bash",
+--   "c",
+--   "javascript",
+--   "json",
+--   "lua",
+--   "python",
+--   "typescript",
+--   "tsx",
+--   "css",
+--   "rust",
+--   "java",
+--   "yaml",
+-- }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enable = true
+-- lvim.builtin.treesitter.ignore_install = { "haskell" }
+-- lvim.builtin.treesitter.highlight.enable = true
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
