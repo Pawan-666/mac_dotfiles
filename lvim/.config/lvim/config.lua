@@ -43,7 +43,8 @@ vim.opt.tabstop = 2           -- 1 tab == 4 spaces
 vim.opt.mouse = 'a'               -- enable mouse support
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.opt.swapfile = false          -- don't use swapfile
-vim.opt.wrap = true               -- line wrapping
+-- vim.opt.wrap = false               -- line wrapping
+-- vim.opt.wrap = true               -- line wrapping
 vim.opt.linebreak = true          -- don't split words
 vim.opt.syntax = 'enable'         -- enable syntax highlighting
 vim.opt.number = true             -- show line number
@@ -68,7 +69,7 @@ lvim.keys.insert_mode["<C-b>"] = "<Left>"
 lvim.keys.normal_mode["<Leader>S"] = ":setlocal spell! spelllang=en_us<CR>"
 lvim.keys.normal_mode["<Leader>C"] = ":set cuc!<CR>"   -- set cursor on column
 lvim.keys.normal_mode["<Leader>n"] = ":set nu! rnu!<CR>"
-lvim.keys.normal_mode["<Leader>z"] = ":ZenMode<CR>"
+-- lvim.keys.normal_mode["<Leader>z"] = ":ZenMode<CR>"
 -- Markdown bindings
 
 lvim.keys.normal_mode["<Leader>M"] = ":MarkdownPreviewToggle<CR>"
@@ -98,6 +99,7 @@ lvim.keys.insert_mode["'b"] = "    "
 -- ggVGp
 
 lvim.keys.normal_mode["<Leader>L"] = ":LspStop<CR>"
+lvim.keys.normal_mode["<Leader>W"] = ":set wrap!<CR>"
 lvim.keys.normal_mode["<Leader>p"] = "ggVGp"
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["k"] = "gk"
@@ -111,7 +113,7 @@ lvim.keys.normal_mode["<Leader>s"] = ":w<CR>"
 -- lvim.keys.normal_mode["<Leader>B"] = ":%s/\s\+$//e<CR>"        # remove trailing whitespaces
 -- lvim.keys.normal_mode["<Leader>B"] = ":match ErrorMsg '\s\+$'<CR>"
 lvim.keys.normal_mode["<Leader>d"] = ":bd<CR>"
-lvim.keys.normal_mode["<Leader>w"] = ":wa<CR>"
+-- lvim.keys.normal_mode["<Leader>w"] = ":wa<CR>"
 lvim.keys.normal_mode["<Leader>a"] = ":ASToggle<CR>"
 lvim.keys.normal_mode["<Leader>q"] = ":qa!<CR>"
 lvim.keys.normal_mode["<C-t>"] = ":NnnPicker %:p:h<CR>"
@@ -406,7 +408,6 @@ lvim.plugins = {
     { "iamcco/markdown-preview.nvim", build = "cd app && npm install", build = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },},
     { 'glacambre/firenvim', build = function() vim.fn['firenvim#install'](0) end },
     {'ekickx/clipboard-image.nvim'},
-    {"folke/zen-mode.nvim"},
     {"murtaza-u/lunarline"},
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

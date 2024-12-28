@@ -3,7 +3,7 @@
 options=(
 	style=round
 	# style=square
-	width=2.0
+	width=4.0
 	hidpi=off
   # white
 	# active_color=0xffe2e2e3

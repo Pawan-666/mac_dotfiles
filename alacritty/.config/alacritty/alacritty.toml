@@ -8,6 +8,12 @@ TERM = "alacritty"
 [font]
 size = 18.0
 
+# [shell]
+# program = "/bin/zsh"
+# # The 2 commands after login are needed to automatically attach to an existing tmux session
+# # If no session exists, a new one is created
+# args = ["--login", "-c", "/opt/homebrew/bin/tmux attach || //opt/homebrew/bin/tmux"]
+
 [window]
 # decorations = "none"
 # decorations = "transparent"
@@ -78,3 +84,7 @@ mods = "Control"
 [window.padding]
 x = 8
 y = 8
+
+[selection]
+save_to_clipboard = true
+
