@@ -9,6 +9,7 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     
     ],
+    "vim.useSystemClipboard": true,
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
@@ -19,6 +20,12 @@
     "files.autoSave": "afterDelay",
     "workbench.colorTheme": "Alt Catppuccin Frappé",
     "diffEditor.codeLens": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
 }
 
 

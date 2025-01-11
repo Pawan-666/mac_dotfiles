@@ -147,4 +147,14 @@
   "key": "space i",
   "when": "vim.mode == 'Normal' && editorTextFocus"
 },
+{
+  "key": "ctrl+e",
+  "command": "cursorEnd",
+  "when": "vim.mode == 'Insert' && editorTextFocus"
+},
+{
+  "key": "ctrl+a",
+  "command": "cursorHome",
+  "when": "vim.mode == 'Insert' && editorTextFocus"
+}
 ]
