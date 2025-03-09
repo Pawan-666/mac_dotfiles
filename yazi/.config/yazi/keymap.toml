@@ -55,11 +55,11 @@ keymap = [
 	{ on = [ "G" ],      run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
 	# Selection
-	{ on = [ "<Space>" ], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = [ "<Space>" ], run = [ "toggle --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = [ "v" ],       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
 	{ on = [ "V" ],       run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
-	{ on = [ "<C-a>" ],   run = "select_all --state=true",            desc = "Select all files" },
-	{ on = [ "<C-r>" ],   run = "select_all --state=none",            desc = "Inverse selection of all files" },
+	{ on = [ "<C-a>" ],   run = "toggle_all --state=true",            desc = "Select all files" },
+	{ on = [ "<C-r>" ],   run = "toggle_all --state=none",            desc = "Inverse selection of all files" },
 
 	# Operation
 	{ on = [ "e" ],         run = "open",                       desc = "Open the selected files" },
@@ -78,7 +78,7 @@ keymap = [
 	{ on = [ "a" ],         run = "create",                     desc = "Create a file or directory (ends with / for directories)" },
   { on = [ "A" ],         run = "create --dir",               desc = "Create a directory" },
 	{ on = [ "r" ],         run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
-	{ on = [ "R" ],         run = "bulk-rename", desc = "Rename a file or directory" },
+	# { on = [ "R" ],         run = "bulk-rename", desc = "Rename a file or directory" },
 	{ on = [ ";" ],         run = "shell --interactive",                      desc = "Run a shell command" },
 	{ on = [ ":" ],         run = "shell --block --interactive",              desc = "Run a shell command (block the UI until the command finishes)" },
 	{ on = [ "." ],         run = "hidden toggle",              desc = "Toggle the visibility of hidden files" },
@@ -143,7 +143,7 @@ keymap = [
 	{ on = [ "}" ], run = "tab_swap 1",  desc = "Swap the current tab with the next tab" },
 
 	# Tasks
-	# { on = [ "T" ], run = "tasks_show", desc = "Show the tasks manager" },
+	{ on = [ "T" ], run = "tasks_show", desc = "Show the tasks manager" },
 
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
@@ -151,7 +151,7 @@ keymap = [
     { on = [ "g", "/" ],       run = "cd /",             desc = "/" },
 	{ on = [ "g", "L" ],       run = "cd /Users/pawanchhetri/learning",    desc = "Learning" },
     { on = [ "g", "B" ],       run = "cd ~/Downloads/Books",             desc = "Boobs" },
-    # { on = [ "g", "e" ],       run = "cd /Users/pawanchhetri/WIKI2/wiki/linux",  desc = "linux" },
+    { on = [ "g", "e" ],       run = "cd /Users/pawanchhetri/WIKI2/wiki/ekbana/",  desc = "linux" },
     { on = [ "g", "w" ],       run = "cd /Users/pawanchhetri/WIKI2/wiki",  desc = "wiki" },
 	{ on = [ "g", "t" ],       run = "cd ~/test",       desc = "test" },
 	{ on = [ "g", "T" ],       run = "cd ~/.tmux_files/",     desc = "tmux files" },
@@ -190,7 +190,7 @@ keymap = [
 	{ on = [ "<Enter>" ], run = "inspect", desc = "Inspect the task" },
 	{ on = [ "x" ],       run = "cancel",  desc = "Cancel the task" },
 
-	{ on = [ "~" ], run = "help", desc = "Open help" }
+	# { on = [ "~" ], run = "help", desc = "Open help" }
 ]
 
 [select]

@@ -2,7 +2,8 @@
 TERM = "alacritty"
 
 [font]
-size = 18.0
+# size = 18.0
+size = 23.0
 
 # [shell]
 # program = "/bin/zsh"
